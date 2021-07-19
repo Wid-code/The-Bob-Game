@@ -347,9 +347,7 @@ var objectsProperties = [
         height: "8vh",
         width: "2vh",
         doAction: (object) => { }
-    },
-
-    //Level 4
+    }
 
     
 ]
