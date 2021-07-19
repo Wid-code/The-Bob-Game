@@ -1,0 +1,162 @@
+/* Background */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.container{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../images/dungeon_preview_dribbble.gif");
+    background-size: cover;
+}
+.shadow{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(54, 54, 54, 50%);
+    z-index: 2;
+}
+
+/* Wall */
+.wall{
+    position: absolute;
+    border: 5px solid black;
+}
+
+/* Bob */
+#bob{
+    position: absolute;
+    height: 4vh;
+    width: 4vh;
+    box-shadow: inset 0 0 1em rgb(255, 196, 0);
+    border: 2px solid rgb(255, 196, 0);
+    background-color: yellow;
+}
+
+/* Point Counter */
+#pointCounter{
+    position: absolute;
+    top: 3%;
+    right: 50px;
+    height: 5vh;
+    width: 5vh;
+    line-height: 5vh;
+    text-align: center;
+}
+
+#pointCounter p{
+    font-family: minecraftmedium;
+    font-size: 3rem;
+    color: white;
+}
+
+/* Energy Bar */
+#energyBar{
+    position: absolute;
+    top: 3%;
+    left: 50px;
+    height: 45px;
+    width: 300px;
+    border: 3px solid grey;
+    box-shadow: inset 0 0 1.2em rgb(255, 196, 0);
+    overflow: hidden;
+    text-align: center;
+    line-height: 4vh;
+    z-index: 4;
+}
+
+#energyBarBgc{
+    position: absolute;
+    top: 3%;
+    left: 50px;
+    height: 45px;
+    width: 300px;
+    background-color: gainsboro;
+    z-index: 4;
+}
+#energyBarInside{
+    position: absolute;
+    top: 3%;
+    left: 50px;
+    height: 45px;
+    width: 300px;
+    background-color: yellow;
+    z-index: 4;
+}
+
+#energyBar p{
+    font-family: minecraftmedium;
+    font-size: 1.5rem;
+    color: #3f3d3d;
+}
+
+/* Points */
+.point{
+    position: absolute;
+    background-color: yellow;
+    box-shadow: inset 0 0 1em rgb(255, 226, 62), 0 0 2em rgb(255, 196, 0);
+    border-radius: 50%;
+    animation: floating 1s infinite linear;
+}
+
+@keyframes floating {
+    
+    50%{transform: translateY(10px);}
+}
+
+/* Next level portal */
+.portal{
+    position: absolute;
+    box-shadow: 0 0 2em gold;
+}
+
+/* Tunel */
+.tunel{
+    position: absolute;
+    background-color: #a3f0fb4f;
+    box-shadow: inset 0 0 5em rgb(62 100 255 / 54%), 0 0 7em rgb(0 218 226 / 58%);
+}   
+.tunel::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 5%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: #a3f0fb4f;
+    box-shadow: inset 0 0 3em rgb(62 100 255 / 54%), 0 0 2em rgb(0 218 226 / 58%);
+    animation: tunelShine 3s infinite linear;
+    opacity: 30%;
+}
+.tunel::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 5%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: #a3f0fb4f;
+    box-shadow: inset 0 0 3em rgb(62 100 255 / 54%), 0 0 2em rgb(0 218 226 / 58%);
+    animation: tunelShine 3s 1.5s infinite linear;
+    opacity: 30%;
+}
+@keyframes tunelShine{
+    100%{
+        transform: translateY(-103vh);
+    }
+}
+
+/* Additional fonts */
+@font-face {
+    font-family: 'minecraftmedium';
+    src: url('../fonts/minecraft-webfont.woff2') format('woff2'),
+         url('../fonts/minecraft-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
